@@ -1,40 +1,51 @@
 /*
-задачa 1: пакування товарів
-У task-1.js оголоси функцію isEnoughCapacity(products, containerSize).
-Вона має підсумувати кількість усіх товарів і перевірити, чи вони вмістяться в контейнер.
-Отримай масив значень об’єкта products за допомогою Object.values().
-Створи змінну для загальної кількості товарів і задай їй початкове значення 0.
-Перебери масив значень циклом і додай кожне число до загальної кількості.
-Порівняй суму з containerSize і поверни результат цього порівняння.
-Додай чотири виклики console.log з ТЗ і залиш їх для ментора.
+задачa 1: імена користувачів
+У task-1.js оголоси стрілочну функцію getUserNames(users). Вона має повернути новий масив зі значеннями властивості name всіх користувачів.
+Виклич метод map() на масиві users.
+У колбеці отримай властивість name кожного користувача.
+Поверни масив, створений методом map().
+Додай перевірочний виклик з ТЗ і залиш його для ментора.
 */
 'use strict';
-function  isEnoughCapacity(products, containerSize) {
-    const values = Object.values(products);
-    let total = 0;
-    for(const value of values){
-        total += value;
+
+const getUserNames = users => users.map(user => user.name);
+
+console.log(
+  getUserNames([
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      balance: 2811
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      balance: 3821
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      balance: 3793
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      balance: 2278
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      balance: 3951
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      balance: 1498
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      balance: 2764
     }
-    return total <= containerSize;
-}
-
-
-console.log(
-  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-); // true
-
-console.log(
-  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-); // false
-
-console.log(
-  isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14)
-); // true
-
-console.log(
-  isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)
-); // false
-
-console.log(isEnoughCapacity({ a: 5 }, 10)); // true
-console.log(isEnoughCapacity({ a: 10 }, 10)); // true
-console.log(isEnoughCapacity({ a: 12 }, 10)); // false
+  ])
+); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
